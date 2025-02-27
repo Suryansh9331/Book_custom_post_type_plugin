@@ -35,7 +35,7 @@ A **WordPress plugin** that creates a **Custom Post Type (CPT) "Books"** with **
 Add the following shortcode to any page where you want users to **manage books**:
 
 ```php
-[book_manager]
+[book_frontend_form]
 ```
 
 ### 2️⃣ Display the List of Books 📋
