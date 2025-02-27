@@ -1,0 +1,185 @@
+/* Styling for Book Management Form */
+#book-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+#book-form button {
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    box-shadow: 0px 4px 12px rgba(0, 180, 219, 0.5);
+}
+
+#book-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 180, 219, 0.7);
+    background: linear-gradient(135deg, #0083b0, #00b4db);
+}
+
+#book-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#book-form input, #book-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#book-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#book-form button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#book-form button:hover {
+    background: #0056b3;
+}
+
+/* Success/Error Messages */
+#book-message {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px auto;
+}
+
+/* Book List Styling */
+#book-list {
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#book-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#book-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+#book-list li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 50px;
+}
+
+#book-list li button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* General Button Styling */
+.edit-book, .delete-book {
+    margin-right : 30px ;
+    margin-left : 30px ;
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Edit Button - Gradient & Glow Effect */
+.edit-book {
+    background: linear-gradient(135deg, #5c67ff, #6a11cb);
+    box-shadow: 0px 4px 12px rgba(108, 92, 231, 0.5);
+}
+
+.edit-book:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(108, 92, 231, 0.7);
+    background: linear-gradient(135deg, #6a11cb, #5c67ff);
+}
+
+/* Delete Button - Vibrant Red & Glow Effect */
+.delete-book {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0px 4px 12px rgba(255, 65, 108, 0.5);
+}
+
+.delete-book:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(255, 65, 108, 0.7);
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+/* Click Animation */
+.edit-book:active, .delete-book:active {
+    transform: scale(0.9);
+}
+
+/* Floating Glow Effect */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+    100% { transform: translateY(0px); }
+}
+
+.edit-book, .delete-book {
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* Button Hover Ripple Effect */
+.edit-book::before, .delete-book::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.edit-book:hover::before, .delete-book:hover::before {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
